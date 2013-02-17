@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="yahoo_sky_conditions_array">
+    	<item>tornado</item>
+		<item>tropical storm</item>
+		<item>hurricane</item>
+		<item>severe thunderstorms</item>
+		<item>thunderstorms</item>
+		<item>mixed rain and snow</item>
+		<item>mixed rain and sleet</item>
+		<item>mixed snow and sleet</item>
+		<item>freezing drizzle</item>
+		<item>drizzle</item>
+		<item>freezing rain</item>
+		<item>showers</item>
+		<item>showers</item>
+		<item>snow flurries</item>
+		<item>light snow showers</item>
+		<item>blowing snow</item>
+		<item>snow</item>
+		<item>hail</item>
+		<item>sleet</item>
+		<item>dust</item>
+		<item>foggy</item>
+		<item>haze</item>
+		<item>smoky</item>
+		<item>blustery</item>
+		<item>windy</item>
+		<item>cold</item>
+		<item>cloudy</item>
+		<item>mostly cloudy (night)</item>
+		<item>mostly cloudy (day)</item>
+		<item>partly cloudy (night)</item>
+		<item>partly cloudy (day)</item>
+		<item>clear (night)</item>
+		<item>sunny</item>
+		<item>fair (night)</item>
+		<item>fair (day)</item>
+		<item>mixed rain and hail</item>
+		<item>hot</item>
+		<item>isolated thunderstorms</item>
+		<item>scattered thunderstorms</item>
+		<item>scattered thunderstorms</item>
+		<item>scattered showers</item>
+		<item>heavy snow</item>
+		<item>scattered snow showers</item>
+		<item>heavy snow</item>
+		<item>partly cloudy</item>
+		<item>thundershowers</item>
+		<item>snow showers</item>
+		<item>isolated thundershowers</item>
+		<item>not available</item>>
+    </string-array>
+</resources>

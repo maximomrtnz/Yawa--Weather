@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="yahoo_sky_conditions_array">
+    	<item>tornado</item>
+		<item>tormenta tropical</item>
+		<item>huracán</item>
+		<item>tormentas electricas severas</item>
+		<item>tormentas electricas</item>
+		<item>lluvia y nieve</item>
+		<item>lluvia y aguanieve</item>
+		<item>nieve y aguanieve</item>
+		<item>llovizna helada</item>
+		<item>llovizna</item>
+		<item>lluvia helada</item>
+		<item>lluvia</item>
+		<item>lluvia</item>
+		<item>copos de nieve</item>
+		<item>nevadas ligeras</item>
+		<item>viento y nieve</item>
+		<item>nieve</item>
+		<item>granizo</item>
+		<item>aguanieve</item>
+		<item>polvo</item>
+		<item>bruma</item>
+		<item>neblina</item>
+		<item>humoso</item>
+		<item>tempestuoso</item>
+		<item>ventoso</item>
+		<item>frio</item>
+		<item>nublado</item>
+		<item>mayormente nublado (noche)</item>
+		<item>mayormente nublado (día)</item>
+		<item>parcialmente nublado (noche)</item>
+		<item>parcialmente nublado (día)</item>
+		<item>despejado (noche)</item>
+		<item>soleado</item>
+		<item>claro (noche)</item>
+		<item>claro (noche)</item>
+		<item>lluvia y granizo</item>
+		<item>cálido</item>
+		<item>tormentas electricas aisladas</item>
+		<item>tormentas dispersas</item>
+		<item>tormentas electricas dispersas</item>
+		<item>lluvias aisladas</item>
+		<item>fuertes nevadas</item>
+		<item>nevadas aisladas</item>
+		<item>fuertes nevadas</item>
+		<item>parcialmente nublada</item>
+		<item>aguacero con truenos</item>
+		<item>lluvia y nieve</item>
+		<item>tormentas electricas aisladas</item>
+		<item>no disponible</item>
+    </string-array>
+</resources>
