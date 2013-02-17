@@ -1,6 +1,7 @@
 package com.yawaweather.widget;
 
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -12,6 +13,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -32,6 +34,7 @@ import com.yawaweather.dialogs.LoadingDataDialog;
 import com.yawaweather.dialogs.LoadingDataDialog.LoadingDataDialogListener;
 import com.yawaweather.dialogs.LocationListDialog;
 import com.yawaweather.dialogs.LocationListDialog.LocationListDialogListener;
+import com.yawaweather.dialogs.LocationListView;
 import com.yawaweather.dialogs.NetworkConnectionOffDialog;
 import com.yawaweather.dialogs.NetworkConnectionOffDialog.NetworkConnectionOffListener;
 import com.yawaweather.main.R;
@@ -39,8 +42,6 @@ import com.yawaweather.model.Place;
 import com.yawaweather.model.Weather;
 import com.yawaweather.model.Widget;
 import com.yawaweather.utilities.CheckList;
-import com.yawaweather.utilities.Observable;
-import com.yawaweather.utilities.Observer;
 import com.yawaweather.utilities.PlacesSetter;
 import com.yawaweather.utilities.WeatherSetter;
 
@@ -258,7 +259,11 @@ public class WidgetConfigurationActivity extends FragmentActivity implements Pla
 		this.places = places;
 		
 		if(this.places.size() > 0){
-			showLocationsListDialog();
+			//showLocationsListDialog();
+			Intent intent = new Intent(this, LocationListView.class);
+			Bundle bundle = new Bundle();
+		    intent.putParcelableArrayListExtra("places", places);
+		    startActivityForResult(intent, 1);
 		}else{
 			//We dont find your location, please try again
 			Context context = getApplicationContext();
@@ -269,6 +274,25 @@ public class WidgetConfigurationActivity extends FragmentActivity implements Pla
 		}
 		
 	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+		// TODO Auto-generated method stub
+		if(requestCode == 1 && resultCode == RESULT_OK){
+			Bundle bundle = intent.getExtras();
+			Place place = bundle.getParcelable("place");
+			
+			//Set Place Data to Widget
+			this.widget.setCityName(place.getName());
+			this.widget.setCountryName(place.getCountryName());
+			this.widget.setWoeid(place.getWoeid());
+			
+			//Call AsynTask to get weather data from web services
+			this.weatherLoader.execute(place.getWoeid(),"",this);
+		}
+	
+	}
+	
 	
 }
 

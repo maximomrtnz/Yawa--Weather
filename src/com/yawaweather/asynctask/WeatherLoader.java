@@ -1,18 +1,13 @@
 package com.yawaweather.asynctask;
 
-import java.util.ArrayList;
-
-import com.yawaweather.model.Place;
-import com.yawaweather.model.Weather;
-import com.yawaweather.rss.GetXMLFromWebServices;
-import com.yawaweather.utilities.Observable;
-import com.yawaweather.utilities.Observer;
-import com.yawaweather.utilities.WeatherSetter;
-
 import android.os.AsyncTask;
 import android.util.Log;
 
-public class WeatherLoader extends AsyncTask<Object, Void, Weather> {
+import com.yawaweather.model.Weather;
+import com.yawaweather.rss.GetXMLFromWebServices;
+import com.yawaweather.utilities.WeatherSetter;
+
+public class WeatherLoader extends AsyncTask<Object, Void, Weather>{
 	
 	private WeatherSetter callback;
 

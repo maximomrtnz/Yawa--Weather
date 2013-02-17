@@ -41,28 +41,34 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ic_tunderstorm=0x7f020007;
     }
     public static final class id {
-        public static final int Corners=0x7f0b000e;
-        public static final int city_name=0x7f0b0006;
+        public static final int Corners=0x7f0b0013;
+        public static final int city_name=0x7f0b000b;
         public static final int edit_name=0x7f0b0000;
         public static final int edit_text_input_location =0x7f0b0002;
-        public static final int humidity=0x7f0b000a;
+        public static final int humidity=0x7f0b000f;
+        public static final int icon=0x7f0b0007;
+        public static final int label_city=0x7f0b0005;
+        public static final int label_country=0x7f0b0006;
+        public static final int label_latitude=0x7f0b0008;
+        public static final int label_longitude=0x7f0b0009;
         public static final int loading_progres_bar=0x7f0b0003;
         public static final int loading_text=0x7f0b0004;
-        public static final int max_temperature=0x7f0b000c;
-        public static final int min_temperature=0x7f0b000d;
-        public static final int pressure=0x7f0b000b;
-        public static final int sky_condition_image=0x7f0b0007;
-        public static final int sky_conditions=0x7f0b0009;
-        public static final int temperature=0x7f0b0008;
+        public static final int max_temperature=0x7f0b0011;
+        public static final int min_temperature=0x7f0b0012;
+        public static final int pressure=0x7f0b0010;
+        public static final int sky_condition_image=0x7f0b000c;
+        public static final int sky_conditions=0x7f0b000e;
+        public static final int temperature=0x7f0b000d;
         public static final int text_input_location=0x7f0b0001;
-        public static final int weather_widget_id=0x7f0b0005;
+        public static final int weather_widget_id=0x7f0b000a;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int fragment_input_location=0x7f030001;
         public static final int fragment_loading_dialog=0x7f030002;
-        public static final int weather_widget=0x7f030003;
-        public static final int widget_configuration_activity=0x7f030004;
+        public static final int row_location_layout=0x7f030003;
+        public static final int weather_widget=0x7f030004;
+        public static final int widget_configuration_activity=0x7f030005;
     }
     public static final class menu {
         public static final int activity_main=0x7f0a0000;
