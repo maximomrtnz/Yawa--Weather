@@ -236,12 +236,12 @@ public class WidgetConfigurationActivity extends FragmentActivity implements Pla
 		
 		
 		views.setTextViewText(R.id.city_name,widget.getCityName() +" ("+widget.getCountryName()+")");
-		views.setTextViewText(R.id.temperature, widget.getTemperature());
+		views.setTextViewText(R.id.temperature, widget.getTemperature()+" "+widget.getScale());
 		views.setTextViewText(R.id.sky_conditions, skyCondition);
 		views.setTextViewText(R.id.humidity, "H"+" "+weather.getHumidity());
 		views.setTextViewText(R.id.pressure, "P"+" "+weather.getPressure());
-		views.setTextViewText(R.id.max_temperature, "Max."+" "+weather.get(0).getHighTemperature());
-		views.setTextViewText(R.id.min_temperature, "Min."+" "+weather.get(0).getLowTemperature());
+		views.setTextViewText(R.id.max_temperature, weather.get(0).getHighTemperature());
+		views.setTextViewText(R.id.min_temperature, weather.get(0).getLowTemperature());
 		
 		appWidgetManager.updateAppWidget(this.widgetID, views);
 				

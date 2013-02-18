@@ -17,7 +17,7 @@
     <string name="yawa_dialog_network_connection_off_title">Network Access Denied</string>
     <string name="yawa_dialog_network_connection_off_message">Yawa! Weather needs network access to get weather data.</string>
     <string name="yawa_dialog_loading_data">Loading Data...Please Wait...</string>
-    <string name="yawa_dialog_locations">Please Select a Location</string>
+    <string name="yawa_dialog_locations">Select a Location</string>
     <string name="yawa_toast_loaction_not_results">Did not match any result. Please try again!</string>
     
     

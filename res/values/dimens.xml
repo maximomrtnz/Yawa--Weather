@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="widget_margin">8dp</dimen>
-    <dimen name="big_text_widget">50sp</dimen>
-    <dimen name="city_text_widget">15sp</dimen>
+    <dimen name="big_text_widget">60sp</dimen>
+    <dimen name="city_text_widget">20sp</dimen>
+    <dimen name="sky_conditions_text_widget">15sp</dimen>
 </resources>

@@ -37,7 +37,7 @@
     
     <style name="Temperature">
     	<item name="android:textSize">@dimen/big_text_widget</item>
-    	<item name="android:layout_width">wrap_content</item>
+    	<item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item> 
     </style>
     
@@ -46,6 +46,13 @@
     	<item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item> 
         <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="SkyConditions">
+    	<item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/sky_conditions_text_widget</item>
     </style>
     
     <style name="OtherWidgetData">

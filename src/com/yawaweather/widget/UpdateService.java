@@ -75,7 +75,7 @@ public class UpdateService extends IntentService{
 						skyCondition = skyConditions[idSkyConditions];
 					}
 					
-					widget.setHighTemperature(weather.get(0).getHighTemperature());
+					widget.setHighTemperature(weather.get(0).getHighTemperature()+" "+widget.getScale());
 					widget.setLowTemperature(weather.get(0).getLowTemperature());
 					widget.setPressure(weather.getPressure());
 					widget.setHumidity(weather.getHumidity());
@@ -97,8 +97,8 @@ public class UpdateService extends IntentService{
 				views.setTextViewText(R.id.sky_conditions, widget.getSkyConditions());
 				views.setTextViewText(R.id.humidity, "H"+" "+widget.getHumidity());
 				views.setTextViewText(R.id.pressure, "P"+" "+widget.getPressure());
-				views.setTextViewText(R.id.max_temperature, "Max."+" "+widget.getHighTemperature());
-				views.setTextViewText(R.id.min_temperature, "Min."+" "+widget.getLowTemperature());
+				views.setTextViewText(R.id.max_temperature, widget.getHighTemperature());
+				views.setTextViewText(R.id.min_temperature, widget.getLowTemperature());
 				
 				appWidgetManager.updateAppWidget(widgetId, views);
 			}

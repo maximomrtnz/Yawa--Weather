@@ -20,32 +20,44 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int buttonBarStyle=0x7f010000;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int customFont=0x7f010002;
     }
     public static final class color {
         public static final int black_overlay=0x7f050000;
-        public static final int blue_background=0x7f050001;
+        public static final int widget_background=0x7f050001;
     }
     public static final class dimen {
         public static final int big_text_widget=0x7f060001;
         public static final int city_text_widget=0x7f060002;
+        public static final int sky_conditions_text_widget=0x7f060003;
         public static final int widget_margin=0x7f060000;
     }
     public static final class drawable {
         public static final int background=0x7f020000;
-        public static final int ic_cloudy=0x7f020001;
-        public static final int ic_drizzle=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int ic_mostly_cloudy=0x7f020004;
-        public static final int ic_snow=0x7f020005;
-        public static final int ic_sunny=0x7f020006;
-        public static final int ic_tunderstorm=0x7f020007;
+        public static final int downarrow=0x7f020001;
+        public static final int ic_cloudy=0x7f020002;
+        public static final int ic_drizzle=0x7f020003;
+        public static final int ic_launcher=0x7f020004;
+        public static final int ic_mostly_cloudy=0x7f020005;
+        public static final int ic_snow=0x7f020006;
+        public static final int ic_sunny=0x7f020007;
+        public static final int ic_tunderstorm=0x7f020008;
+        public static final int uparrow=0x7f020009;
     }
     public static final class id {
-        public static final int Corners=0x7f0b0013;
+        public static final int Corners=0x7f0b0015;
         public static final int city_name=0x7f0b000b;
+        public static final int down_arrow_image=0x7f0b0010;
         public static final int edit_name=0x7f0b0000;
         public static final int edit_text_input_location =0x7f0b0002;
-        public static final int humidity=0x7f0b000f;
+        public static final int humidity=0x7f0b0013;
         public static final int icon=0x7f0b0007;
         public static final int label_city=0x7f0b0005;
         public static final int label_country=0x7f0b0006;
@@ -53,13 +65,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int label_longitude=0x7f0b0009;
         public static final int loading_progres_bar=0x7f0b0003;
         public static final int loading_text=0x7f0b0004;
-        public static final int max_temperature=0x7f0b0011;
-        public static final int min_temperature=0x7f0b0012;
-        public static final int pressure=0x7f0b0010;
+        public static final int max_temperature=0x7f0b000f;
+        public static final int min_temperature=0x7f0b0011;
+        public static final int pressure=0x7f0b0014;
         public static final int sky_condition_image=0x7f0b000c;
-        public static final int sky_conditions=0x7f0b000e;
+        public static final int sky_conditions=0x7f0b0012;
         public static final int temperature=0x7f0b000d;
         public static final int text_input_location=0x7f0b0001;
+        public static final int up_arrow_image=0x7f0b000e;
         public static final int weather_widget_id=0x7f0b000a;
     }
     public static final class layout {
@@ -124,8 +137,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ButtonBarButton=0x7f090002;
         public static final int CytyName=0x7f090006;
         public static final int FullscreenTheme=0x7f090004;
-        public static final int MaxMinTemperature=0x7f090008;
-        public static final int OtherWidgetData=0x7f090007;
+        public static final int MaxMinTemperature=0x7f090009;
+        public static final int OtherWidgetData=0x7f090008;
+        public static final int SkyConditions=0x7f090007;
         public static final int Temperature=0x7f090005;
     }
     public static final class xml {
@@ -172,5 +186,32 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name android:buttonBarStyle
         */
         public static final int ButtonBarContainerTheme_buttonBarStyle = 0;
+        /** Attributes that can be used with a CustomTextView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CustomTextView_customFont com.yawaweather.main:customFont}</code></td><td></td></tr>
+           </table>
+           @see #CustomTextView_customFont
+         */
+        public static final int[] CustomTextView = {
+            0x7f010002
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.yawaweather.main.R.attr#customFont}
+          attribute's value can be found in the {@link #CustomTextView} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:customFont
+        */
+        public static final int CustomTextView_customFont = 0;
     };
 }
