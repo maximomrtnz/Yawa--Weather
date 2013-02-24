@@ -79,9 +79,10 @@ containing a value of this type.
         public static final int activity_main=0x7f030000;
         public static final int fragment_input_location=0x7f030001;
         public static final int fragment_loading_dialog=0x7f030002;
-        public static final int row_location_layout=0x7f030003;
-        public static final int weather_widget=0x7f030004;
-        public static final int widget_configuration_activity=0x7f030005;
+        public static final int location_layout=0x7f030003;
+        public static final int row_location_layout=0x7f030004;
+        public static final int weather_widget=0x7f030005;
+        public static final int widget_configuration_activity=0x7f030006;
     }
     public static final class menu {
         public static final int activity_main=0x7f0a0000;
@@ -102,6 +103,7 @@ containing a value of this type.
         public static final int yawa_dialog_locations=0x7f080010;
         public static final int yawa_dialog_network_connection_off_message=0x7f08000e;
         public static final int yawa_dialog_network_connection_off_title=0x7f08000d;
+        public static final int yawa_location_not_results=0x7f080012;
         public static final int yawa_settings=0x7f08000b;
         public static final int yawa_settings_main_preferences=0x7f08000c;
         public static final int yawa_toast_loaction_not_results=0x7f080011;

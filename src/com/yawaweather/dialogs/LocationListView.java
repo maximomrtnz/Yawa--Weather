@@ -9,6 +9,7 @@ import com.yawaweather.utilities.PlaceAdapter;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
@@ -20,6 +21,11 @@ public class LocationListView extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		
+		setContentView(R.layout.location_layout);
+		
+		//Remove title bar
+		//this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		
 		Bundle extras = getIntent().getExtras();
 
@@ -42,4 +48,15 @@ public class LocationListView extends ListActivity {
 	    setResult(RESULT_OK, intent);
 	    finish();
 	}
+	
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		//Return place to call activity
+		Intent intent = new Intent();
+	    setResult(RESULT_CANCELED, intent);
+	    finish();
+	}
+	
+	
 }

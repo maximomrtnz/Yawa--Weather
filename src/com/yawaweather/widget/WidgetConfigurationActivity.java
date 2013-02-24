@@ -1,33 +1,33 @@
 package com.yawaweather.widget;
 
 
-import java.io.Serializable;
+
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import android.annotation.SuppressLint;
+
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.os.Parcelable;
+
 import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
+
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.text.format.Time;
+
 import android.util.Log;
 import android.widget.RemoteViews;
-import android.widget.Toast;
 
+
+import com.yawaweather.controller.Controller;
 import com.yawaweather.database.DataBaseMapper;
 import com.yawaweather.asynctask.PlacesLoader;
 import com.yawaweather.asynctask.WeatherLoader;
-import com.yawaweather.database.DataBaseHandler;
+
 import com.yawaweather.dialogs.InputLocationDialog;
 import com.yawaweather.dialogs.InputLocationDialog.InputLocationDialogListener;
 import com.yawaweather.dialogs.LoadingDataDialog;
@@ -103,26 +103,26 @@ public class WidgetConfigurationActivity extends FragmentActivity implements Pla
 		 FragmentManager fragmentManager = getSupportFragmentManager();
 	     InputLocationDialog inputLocationDialog = new InputLocationDialog();
 	     inputLocationDialog.show(fragmentManager, "fragment_input_location");
+	     //This is to prevent back button
+	     inputLocationDialog.setCancelable(false);
 	 }
 	
 	 private void showNetworkConnectionOffDialog(){
 		 FragmentManager fragmentManager = getSupportFragmentManager();
 		 NetworkConnectionOffDialog networkConnectionOffDialog = new NetworkConnectionOffDialog();
 		 networkConnectionOffDialog.show(fragmentManager, "fragment_network_connection");
+		 //This is to prevent back button
+		 networkConnectionOffDialog.setCancelable(false);
 	 }
 	 
 	 private void showLoadingDataDialog(){
 		 FragmentManager fragmentManager = getSupportFragmentManager();
 		 LoadingDataDialog loadingDataDialog = new LoadingDataDialog();
 		 loadingDataDialog.show(fragmentManager, "fragment_loading_data");
+		 //This is to prevent back button
+		 loadingDataDialog.setCancelable(false);
 	 }
 	 
-	 private void showLocationsListDialog(){
-		 FragmentManager fragmentManager = getSupportFragmentManager();
-		 LocationListDialog locationListDialog = new LocationListDialog();
-		 locationListDialog.setPlacesList(this.places);
-		 locationListDialog.show(fragmentManager, "fragment_loading_data");
-	 }
 
 	@Override
 	public void onNetworkConnectionOffDialogPositiveClick(DialogFragment dialog) {
@@ -208,43 +208,9 @@ public class WidgetConfigurationActivity extends FragmentActivity implements Pla
 		
 		this.widget.setUpdateDateTime(DateFormat.getDateTimeInstance().format(new Date()));
 		
-		DataBaseMapper dataBaseMapper = DataBaseMapper.getInstance();
-		
-		dataBaseMapper.addWidget(this.widget, getApplicationContext());
-		
-		//Update Widget
-		
-		AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(getApplicationContext());
-		
-		RemoteViews views = new RemoteViews(getApplicationContext().getPackageName(),R.layout.weather_widget);
-		
-		// Set the text with the current time.
-		
-		Resources res = getResources();
-		
-		String[] skyConditions = res.getStringArray(R.array.yahoo_sky_conditions_array);
-		
-		int idSkyConditions = Integer.parseInt(widget.getSkyConditions());
-		
-		String skyCondition;
-		
-		if(idSkyConditions == 3200){
-			skyCondition = skyConditions[skyConditions.length];
-		}else{
-			skyCondition = skyConditions[idSkyConditions];
-		}
+		Controller.getInstance().addNewWidget(getApplicationContext(), widget);
 		
 		
-		views.setTextViewText(R.id.city_name,widget.getCityName() +" ("+widget.getCountryName()+")");
-		views.setTextViewText(R.id.temperature, widget.getTemperature()+" "+widget.getScale());
-		views.setTextViewText(R.id.sky_conditions, skyCondition);
-		views.setTextViewText(R.id.humidity, "H"+" "+weather.getHumidity());
-		views.setTextViewText(R.id.pressure, "P"+" "+weather.getPressure());
-		views.setTextViewText(R.id.max_temperature, weather.get(0).getHighTemperature());
-		views.setTextViewText(R.id.min_temperature, weather.get(0).getLowTemperature());
-		
-		appWidgetManager.updateAppWidget(this.widgetID, views);
-				
 		Intent resultValue = new Intent();
 		resultValue.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, this.widgetID);
 		setResult(RESULT_OK, resultValue);
@@ -258,20 +224,9 @@ public class WidgetConfigurationActivity extends FragmentActivity implements Pla
 		
 		this.places = places;
 		
-		if(this.places.size() > 0){
-			//showLocationsListDialog();
-			Intent intent = new Intent(this, LocationListView.class);
-			Bundle bundle = new Bundle();
-		    intent.putParcelableArrayListExtra("places", places);
-		    startActivityForResult(intent, 1);
-		}else{
-			//We dont find your location, please try again
-			Context context = getApplicationContext();
-			int duration = Toast.LENGTH_LONG;
-			Toast toast = Toast.makeText(context, R.string.yawa_toast_loaction_not_results, duration);
-			toast.show();
-			this.showInputLocationDialog();
-		}
+		Intent intent = new Intent(this, LocationListView.class);
+	    intent.putParcelableArrayListExtra("places", places);
+	    startActivityForResult(intent, 1);
 		
 	}
 	
@@ -289,9 +244,21 @@ public class WidgetConfigurationActivity extends FragmentActivity implements Pla
 			
 			//Call AsynTask to get weather data from web services
 			this.weatherLoader.execute(place.getWoeid(),"",this);
+			
+		}else if(requestCode == 1 && resultCode == RESULT_CANCELED){
+			//if Location List Activity was cancelled
+			finish();
 		}
 	
 	}
+	
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		//If Back Button was pressed
+		finish();
+	}
+	
 	
 	
 }

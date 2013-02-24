@@ -19,6 +19,6 @@
     <string name="yawa_dialog_loading_data">Loading Data...Please Wait...</string>
     <string name="yawa_dialog_locations">Select a Location</string>
     <string name="yawa_toast_loaction_not_results">Did not match any result. Please try again!</string>
-    
+    <string name="yawa_location_not_results">Did not match any result. Please try again!</string>
     
 </resources>

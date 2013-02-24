@@ -68,6 +68,7 @@ public class LoadingDataDialog extends DialogFragment{
 	        // Create the AlertDialog object and return it
 	        return builder.create();
 	    }
-
+	    
+	    
 
 }
