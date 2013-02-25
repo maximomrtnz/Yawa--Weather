@@ -9,9 +9,12 @@ import com.yawaweather.model.Weather;
 import com.yawaweather.model.Widget;
 import com.yawaweather.rss.GetXMLFromWebServices;
 import com.yawaweather.utilities.CheckList;
+import com.yawaweather.widget.WidgetPreferences;
 
+import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.widget.RemoteViews;
@@ -69,7 +72,12 @@ public class Controller {
 		views.setTextViewText(R.id.pressure, "P" + " " + widget.getPressure());
 		views.setTextViewText(R.id.max_temperature, widget.getHighTemperature());
 		views.setTextViewText(R.id.min_temperature, widget.getLowTemperature());
-
+		
+		//Make a Clickleable Widget
+		Intent intent = new Intent(context, WidgetPreferences.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
+        views.setOnClickPendingIntent(R.id.weather_widget_id, pendingIntent);
+		
 		appWidgetManager.updateAppWidget(
 				Integer.parseInt(widget.getWidgetID()), views);
 	}

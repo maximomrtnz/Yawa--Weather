@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="yawa_weather_temperature_scales">
+        <item >Celsius</item>
+        <item >Fahrenheit</item>
+    </string-array>
+</resources>

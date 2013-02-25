@@ -9,16 +9,15 @@
     <string name="ok_new_widget">OK</string>
     <string name="cancel_new_widget">Cancel</string> 
     <string name="input_location">Insert Location</string> 
-    <string name="setting_scale_temperature">Scale of Temperature</string>
-    <string name="setting_scale_pressure">Scale of Pressure</string>
+    <string name="preference_scale_temperature">Scale of Temperature</string>
+    <string name="preference_scale_pressure">Scale of Pressure</string>
     <string name="setting_language_widget">Language Widget</string>
-    <string name="yawa_settings">Yawa! Weather General Settings</string>
-    <string name="yawa_settings_main_preferences">Main Preferences</string>
+    <string name="yawa_preferences">Widget Preferences</string>
     <string name="yawa_dialog_network_connection_off_title">Network Access Denied</string>
     <string name="yawa_dialog_network_connection_off_message">Yawa! Weather needs network access to get weather data.</string>
     <string name="yawa_dialog_loading_data">Loading Data...Please Wait...</string>
     <string name="yawa_dialog_locations">Select a Location</string>
     <string name="yawa_toast_loaction_not_results">Did not match any result. Please try again!</string>
     <string name="yawa_location_not_results">Did not match any result. Please try again!</string>
-    
+    <string name="yawa_preferences_scales">Scales</string>
 </resources>

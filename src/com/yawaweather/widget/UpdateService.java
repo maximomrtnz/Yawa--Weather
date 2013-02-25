@@ -33,6 +33,7 @@ public class UpdateService extends IntentService{
 			
 			Controller.getInstance().updateWidgetData(getApplicationContext(), widget);
 			
+			
 		}catch (Exception e) {
 				// TODO: handle exception
 				Log.d("Error while weather data was getting", e.getMessage());

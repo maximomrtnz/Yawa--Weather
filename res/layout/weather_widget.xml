@@ -6,7 +6,7 @@
     android:background="@drawable/background"
     android:clickable="true"
     android:orientation="vertical"
-    android:padding="10dp" >
+    android:padding="10dp">
 
     <TextView
         android:id="@+id/city_name"

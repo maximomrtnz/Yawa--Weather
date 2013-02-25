@@ -1,10 +1,6 @@
 package com.yawaweather.dialogs;
 
-import java.util.Observer;
 
-import com.yawaweather.buttonlisteners.NegativeButtonInputLocationDialogListener;
-import com.yawaweather.buttonlisteners.PositiveButtonInputLocationDialogListener;
-import com.yawaweather.dialogs.NetworkConnectionOffDialog.NetworkConnectionOffListener;
 import com.yawaweather.main.R;
 
 import android.app.Activity;
@@ -59,8 +55,7 @@ public class InputLocationDialog extends DialogFragment{
 	        // Inflate and set the layout for the dialog
 	        View view = inflater.inflate(R.layout.fragment_input_location,null);
 	        
-	        this.location = (EditText) view.findViewById(R.id.edit_text_input_location);
-	        
+       
 	        // Pass null as the parent view because its going in the dialog layout
 	        builder.setView(view)
 	               .setPositiveButton(R.string.ok_new_widget,new DialogInterface.OnClickListener() {

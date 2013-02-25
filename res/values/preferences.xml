@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="yawa_weather_preferences">
+    	<item >Temperature Scale</item>
+    	<item >Pressure Scale</item>
+    </string-array>
+</resources>    

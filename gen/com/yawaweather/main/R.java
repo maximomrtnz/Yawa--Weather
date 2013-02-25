@@ -9,7 +9,10 @@ package com.yawaweather.main;
 
 public final class R {
     public static final class array {
-        public static final int yahoo_sky_conditions_array=0x7f070000;
+        public static final int yahoo_sky_conditions_array=0x7f070002;
+        public static final int yawa_weather_preferences=0x7f070000;
+        public static final int yawa_weather_presure_scales=0x7f070001;
+        public static final int yawa_weather_temperature_scales=0x7f070003;
     }
     public static final class attr {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -52,7 +55,7 @@ containing a value of this type.
         public static final int uparrow=0x7f020009;
     }
     public static final class id {
-        public static final int Corners=0x7f0b0015;
+        public static final int Corners=0x7f0b0018;
         public static final int city_name=0x7f0b000b;
         public static final int down_arrow_image=0x7f0b0010;
         public static final int edit_name=0x7f0b0000;
@@ -68,12 +71,15 @@ containing a value of this type.
         public static final int max_temperature=0x7f0b000f;
         public static final int min_temperature=0x7f0b0011;
         public static final int pressure=0x7f0b0014;
+        public static final int separator=0x7f0b0015;
         public static final int sky_condition_image=0x7f0b000c;
         public static final int sky_conditions=0x7f0b0012;
         public static final int temperature=0x7f0b000d;
         public static final int text_input_location=0x7f0b0001;
         public static final int up_arrow_image=0x7f0b000e;
         public static final int weather_widget_id=0x7f0b000a;
+        public static final int widget_preference=0x7f0b0017;
+        public static final int widget_temperature_scale=0x7f0b0016;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -83,6 +89,8 @@ containing a value of this type.
         public static final int row_location_layout=0x7f030004;
         public static final int weather_widget=0x7f030005;
         public static final int widget_configuration_activity=0x7f030006;
+        public static final int widget_preferences=0x7f030007;
+        public static final int widget_preferences_row=0x7f030008;
     }
     public static final class menu {
         public static final int activity_main=0x7f0a0000;
@@ -96,17 +104,17 @@ containing a value of this type.
         public static final int input_country_name=0x7f080003;
         public static final int input_location=0x7f080007;
         public static final int ok_new_widget=0x7f080005;
+        public static final int preference_scale_pressure=0x7f080009;
+        public static final int preference_scale_temperature=0x7f080008;
         public static final int setting_language_widget=0x7f08000a;
-        public static final int setting_scale_pressure=0x7f080009;
-        public static final int setting_scale_temperature=0x7f080008;
-        public static final int yawa_dialog_loading_data=0x7f08000f;
-        public static final int yawa_dialog_locations=0x7f080010;
-        public static final int yawa_dialog_network_connection_off_message=0x7f08000e;
-        public static final int yawa_dialog_network_connection_off_title=0x7f08000d;
-        public static final int yawa_location_not_results=0x7f080012;
-        public static final int yawa_settings=0x7f08000b;
-        public static final int yawa_settings_main_preferences=0x7f08000c;
-        public static final int yawa_toast_loaction_not_results=0x7f080011;
+        public static final int yawa_dialog_loading_data=0x7f08000e;
+        public static final int yawa_dialog_locations=0x7f08000f;
+        public static final int yawa_dialog_network_connection_off_message=0x7f08000d;
+        public static final int yawa_dialog_network_connection_off_title=0x7f08000c;
+        public static final int yawa_location_not_results=0x7f080011;
+        public static final int yawa_preferences=0x7f08000b;
+        public static final int yawa_preferences_scales=0x7f080012;
+        public static final int yawa_toast_loaction_not_results=0x7f080010;
     }
     public static final class style {
         /** 

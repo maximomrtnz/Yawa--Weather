@@ -51,6 +51,11 @@
             android:label="@string/yawa_dialog_locations">
         </activity>
         
+          <activity 
+      
+            android:name="com.yawaweather.widget.WidgetPreferences"
+            android:label="@string/yawa_preferences">
+        </activity>
         
         <!-- Widget Configuration Activity-->
         <activity 
