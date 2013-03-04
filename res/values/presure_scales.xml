@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-       <string-array name="yawa_weather_presure_scales">
-       <item>Inch Of Mercury</item>
-		<item> Hectopascal </item>
+    <string-array name="yawa_weather_presure_scales">
+    	<item>Inch Of Mercury</item>
+		<item>Hectopascal</item>
     </string-array>
+    <string-array name="yawa_weather_presure_scales_types">
+  		  <item>0</item>
+		  <item>1</item>
+	</string-array>
 </resources>

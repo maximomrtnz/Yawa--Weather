@@ -22,7 +22,7 @@ public class InputLocationDialog extends DialogFragment{
 		
 		//Make an interface to manage the event in the parent activity
 		public interface InputLocationDialogListener{	
-			public abstract void onInputLocationDialogPositiveClick(DialogFragment dialog);
+			public abstract void onInputLocationDialogPositiveClick(DialogFragment dialog,String location);
 			public abstract void onInputLocationDialogNegativeClick(DialogFragment dialog);
 		}
 	   	
@@ -55,14 +55,15 @@ public class InputLocationDialog extends DialogFragment{
 	        // Inflate and set the layout for the dialog
 	        View view = inflater.inflate(R.layout.fragment_input_location,null);
 	        
-       
+	        this.location = (EditText)view.findViewById(R.id.edit_text_input_location);
+	        
 	        // Pass null as the parent view because its going in the dialog layout
 	        builder.setView(view)
 	               .setPositiveButton(R.string.ok_new_widget,new DialogInterface.OnClickListener() {
 	                   public void onClick(DialogInterface dialog, int id) {
 	                	   
 	                       // Send the positive button event back to the host activity
-	                       mListener.onInputLocationDialogPositiveClick(InputLocationDialog.this);
+	                       mListener.onInputLocationDialogPositiveClick(InputLocationDialog.this,location.getText().toString());
 	                   }
 	               })
 	               .setNegativeButton(R.string.cancel_new_widget,new DialogInterface.OnClickListener() {
@@ -75,8 +76,5 @@ public class InputLocationDialog extends DialogFragment{
 	        return builder.create();
 	    }
 	    
-	    public String getLocation(){
-	    	return this.location.getText().toString();
-	    }
-	    
+	   	    
 }

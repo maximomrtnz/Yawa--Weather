@@ -5,14 +5,20 @@ import java.util.Date;
 
 import com.yawaweather.database.DataBaseMapper;
 import com.yawaweather.main.R;
+import com.yawaweather.model.PressureManager;
+import com.yawaweather.model.TemperatureConversion;
+import com.yawaweather.model.TemperatureManager;
 import com.yawaweather.model.Weather;
 import com.yawaweather.model.Widget;
 import com.yawaweather.rss.GetXMLFromWebServices;
 import com.yawaweather.utilities.CheckList;
+import com.yawaweather.widget.UpdateService;
+import com.yawaweather.widget.WeatherWidgetProvider;
 import com.yawaweather.widget.WidgetPreferences;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -65,13 +71,16 @@ public class Controller {
 
 		views.setTextViewText(R.id.city_name, widget.getCityName() + " ("
 				+ widget.getCountryName() + ")");
-		views.setTextViewText(R.id.temperature, widget.getTemperature() + " "
-				+ widget.getScale());
+		
+		TemperatureManager temperatureManager = new TemperatureManager();
+		PressureManager pressureManager = new PressureManager();
+		
+		views.setTextViewText(R.id.temperature, temperatureManager.getTemperature(Float.parseFloat(widget.getTemperature()), context));
 		views.setTextViewText(R.id.sky_conditions, skyCondition);
-		views.setTextViewText(R.id.humidity, "H" + " " + widget.getHumidity());
-		views.setTextViewText(R.id.pressure, "P" + " " + widget.getPressure());
-		views.setTextViewText(R.id.max_temperature, widget.getHighTemperature());
-		views.setTextViewText(R.id.min_temperature, widget.getLowTemperature());
+		views.setTextViewText(R.id.humidity, "H" + " " + widget.getHumidity() + "%");
+		views.setTextViewText(R.id.pressure, "P" + " " + pressureManager.getPressure(Double.parseDouble(widget.getPressure()), context));
+		views.setTextViewText(R.id.max_temperature, temperatureManager.getTemperature(Float.parseFloat(widget.getHighTemperature()), context));
+		views.setTextViewText(R.id.min_temperature, temperatureManager.getTemperature(Float.parseFloat(widget.getLowTemperature()), context));
 		
 		//Make a Clickleable Widget
 		Intent intent = new Intent(context, WidgetPreferences.class);
@@ -121,5 +130,26 @@ public class Controller {
 
 		}
 	}
-
+	
+	public void updateAllWidget(Context context){
+		
+		AppWidgetManager appWidgetManager = AppWidgetManager
+				.getInstance(context);
+		ComponentName name = new ComponentName(context, WeatherWidgetProvider.class);
+		
+		int [] appWidgetIds = AppWidgetManager.getInstance(context).getAppWidgetIds(name);
+		
+		int n = appWidgetIds.length;
+		
+		for (int i=0; i<n; i++) {
+            int appWidgetId = appWidgetIds[i];
+            
+            Intent serviceIntent = new Intent(context, UpdateService.class);
+            serviceIntent.putExtra("widgetId",appWidgetId);
+            context.startService(serviceIntent);
+            
+        }
+		
+	}
+	
 }

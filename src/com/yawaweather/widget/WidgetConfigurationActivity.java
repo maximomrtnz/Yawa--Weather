@@ -131,13 +131,13 @@ public class WidgetConfigurationActivity extends FragmentActivity implements Pla
 	}
 
 	@Override
-	public void onInputLocationDialogPositiveClick(DialogFragment dialog) {
+	public void onInputLocationDialogPositiveClick(DialogFragment dialog, String location) {
 		// TODO Auto-generated method stub
 		
 		//Init AsinkTask to get Data From WebServices
 		this.showLoadingDataDialog();
-			
-		this.placesLoader.execute(((InputLocationDialog)dialog).getLocation(),this);
+		
+		this.placesLoader.execute(location,this);
 		
 	}
 

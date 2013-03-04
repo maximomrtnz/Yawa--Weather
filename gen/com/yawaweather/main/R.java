@@ -9,10 +9,13 @@ package com.yawaweather.main;
 
 public final class R {
     public static final class array {
-        public static final int yahoo_sky_conditions_array=0x7f070002;
+        public static final int yahoo_sky_conditions_array=0x7f070003;
         public static final int yawa_weather_preferences=0x7f070000;
         public static final int yawa_weather_presure_scales=0x7f070001;
-        public static final int yawa_weather_temperature_scales=0x7f070003;
+        public static final int yawa_weather_presure_scales_types=0x7f070002;
+        public static final int yawa_weather_temperature_scales=0x7f070004;
+        public static final int yawa_weather_temperature_scales_types=0x7f070005;
+        public static final int yawa_weather_wind_directions=0x7f070006;
     }
     public static final class attr {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -59,7 +62,7 @@ containing a value of this type.
         public static final int city_name=0x7f0b000b;
         public static final int down_arrow_image=0x7f0b0010;
         public static final int edit_name=0x7f0b0000;
-        public static final int edit_text_input_location =0x7f0b0002;
+        public static final int edit_text_input_location=0x7f0b0002;
         public static final int humidity=0x7f0b0013;
         public static final int icon=0x7f0b0007;
         public static final int label_city=0x7f0b0005;
@@ -105,7 +108,9 @@ containing a value of this type.
         public static final int input_location=0x7f080007;
         public static final int ok_new_widget=0x7f080005;
         public static final int preference_scale_pressure=0x7f080009;
+        public static final int preference_scale_pressure_summary=0x7f080014;
         public static final int preference_scale_temperature=0x7f080008;
+        public static final int preference_scale_temperature_summary=0x7f080013;
         public static final int setting_language_widget=0x7f08000a;
         public static final int yawa_dialog_loading_data=0x7f08000e;
         public static final int yawa_dialog_locations=0x7f08000f;
@@ -153,7 +158,8 @@ containing a value of this type.
         public static final int Temperature=0x7f090005;
     }
     public static final class xml {
-        public static final int widget_weather_info=0x7f040000;
+        public static final int preferences=0x7f040000;
+        public static final int widget_weather_info=0x7f040001;
     }
     public static final class styleable {
         /** 

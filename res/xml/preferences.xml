@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="YawaWeather_Settings" >
+
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/yawa_weather_temperature_scales"
+        android:entryValues="@array/yawa_weather_temperature_scales_types"
+        android:key="setting_temperature"
+        android:summary="@string/preference_scale_temperature_summary"
+        android:title="@string/preference_scale_temperature" />
+    
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/yawa_weather_presure_scales"
+        android:entryValues="@array/yawa_weather_presure_scales_types"
+        android:key="setting_pressure"
+        android:summary="@string/preference_scale_temperature_summary"
+        android:title="@string/preference_scale_pressure" />
+
+</PreferenceScreen>
