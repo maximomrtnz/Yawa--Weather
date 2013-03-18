@@ -17,7 +17,7 @@ public class DataBaseHandler extends SQLiteOpenHelper{
 	
 	
 	// Database Version
-	public static final int DATABASE_VERSION = 3;
+	public static final int DATABASE_VERSION = 4;
 
 	// Database Name
 	public static final String DATABASE_NAME = "YawaWeather";
@@ -48,6 +48,8 @@ public class DataBaseHandler extends SQLiteOpenHelper{
 				WidgetContract.KEY_WIDGETS_SCALE_DATA + " TEXT, " +
 				WidgetContract.KEY_WIDGETS_LAST_SKY_CONDITIONS + " TEXT, " +
 				WidgetContract.KEY_WIDGETS_LAST_UPDATE_DATETIME + " TEXT, " +
+				WidgetContract.KEY_WIDGETS_WIND_DEGREE + " TEXT, " +
+				WidgetContract.KEY_WIDGETS_WIND_VELOCITY + " TEXT, " +
 				WidgetContract.KEY_WIDGETS_WOEID + " TEXT );";
 		db.execSQL(CREATE_WIDGETS_TABLE);
 	}

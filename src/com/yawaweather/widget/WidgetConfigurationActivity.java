@@ -10,7 +10,6 @@ import java.util.Date;
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 
@@ -20,11 +19,9 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 
 import android.util.Log;
-import android.widget.RemoteViews;
 
 
 import com.yawaweather.controller.Controller;
-import com.yawaweather.database.DataBaseMapper;
 import com.yawaweather.asynctask.PlacesLoader;
 import com.yawaweather.asynctask.WeatherLoader;
 
@@ -32,12 +29,10 @@ import com.yawaweather.dialogs.InputLocationDialog;
 import com.yawaweather.dialogs.InputLocationDialog.InputLocationDialogListener;
 import com.yawaweather.dialogs.LoadingDataDialog;
 import com.yawaweather.dialogs.LoadingDataDialog.LoadingDataDialogListener;
-import com.yawaweather.dialogs.LocationListDialog;
 import com.yawaweather.dialogs.LocationListDialog.LocationListDialogListener;
 import com.yawaweather.dialogs.LocationListView;
 import com.yawaweather.dialogs.NetworkConnectionOffDialog;
 import com.yawaweather.dialogs.NetworkConnectionOffDialog.NetworkConnectionOffListener;
-import com.yawaweather.main.R;
 import com.yawaweather.model.Place;
 import com.yawaweather.model.Weather;
 import com.yawaweather.model.Widget;
@@ -207,6 +202,11 @@ public class WidgetConfigurationActivity extends FragmentActivity implements Pla
 		this.widget.setScale("F");
 		
 		this.widget.setUpdateDateTime(DateFormat.getDateTimeInstance().format(new Date()));
+		
+		this.widget.setWindDegree(weather.getWindDegree());
+		
+		this.widget.setWindVelocity(weather.getWindVelocity());
+		
 		
 		Controller.getInstance().addNewWidget(getApplicationContext(), widget);
 		

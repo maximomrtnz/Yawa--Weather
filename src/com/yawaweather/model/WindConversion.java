@@ -2,6 +2,6 @@ package com.yawaweather.model;
 
 public interface WindConversion {
 	
-	public String convert(int degrees);
+	public int convert(int degrees);
 	
 }

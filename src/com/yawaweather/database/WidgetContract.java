@@ -21,6 +21,7 @@ public class WidgetContract implements BaseColumns {
 	public static final String KEY_WIDGETS_SCALE_DATA = "Scale_Data";
 	public static final String KEY_WIDGETS_LAST_SKY_CONDITIONS = "Last_Sky_Conditions";
 	public static final String KEY_WIDGETS_LAST_UPDATE_DATETIME = "Last_Update_Time";
-	
+	public static final String KEY_WIDGETS_WIND_VELOCITY = "Wind_Velocity";
+	public static final String KEY_WIDGETS_WIND_DEGREE = "Wind_Degree";
 	
 }

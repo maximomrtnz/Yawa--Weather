@@ -57,6 +57,15 @@ public class RSSHandler extends DefaultHandler{
 			this.weather.addForecast(weatherForecast);
 		}
 		
+		//Wind Data
+		if(localName.equals("wind")){
+			this.weather.setWindDegree(attributes.getValue("direction"));
+			this.weather.setWindVelocity(attributes.getValue("speed"));
+			
+		}
+		
+		
+		
 		
 
 	}

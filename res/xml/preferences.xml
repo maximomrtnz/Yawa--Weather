@@ -17,5 +17,13 @@
         android:key="setting_pressure"
         android:summary="@string/preference_scale_temperature_summary"
         android:title="@string/preference_scale_pressure" />
+    
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/yawa_weather_velocity_scales"
+        android:entryValues="@array/yawa_weather_velocity_scales_types"
+        android:key="setting_wind_velocity"
+        android:summary="@string/preference_scale_velocity_summary"
+        android:title="@string/preference_scale_velocity" />
 
 </PreferenceScreen>

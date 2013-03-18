@@ -10,6 +10,9 @@ import com.yawaweather.model.TemperatureConversion;
 import com.yawaweather.model.TemperatureManager;
 import com.yawaweather.model.Weather;
 import com.yawaweather.model.Widget;
+import com.yawaweather.model.WindConversion;
+import com.yawaweather.model.WindDegreesToWindDirection;
+import com.yawaweather.model.WindManager;
 import com.yawaweather.rss.GetXMLFromWebServices;
 import com.yawaweather.utilities.CheckList;
 import com.yawaweather.widget.UpdateService;
@@ -23,6 +26,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.net.ConnectivityManager;
+import android.util.Log;
 import android.widget.RemoteViews;
 
 public class Controller {
@@ -58,6 +62,10 @@ public class Controller {
 
 		String[] skyConditions = res
 				.getStringArray(R.array.yahoo_sky_conditions_array);
+		
+		String[] windDirections = res.getStringArray(R.array.yawa_weather_wind_directions);
+		
+		
 
 		int idSkyConditions = Integer.parseInt(widget.getSkyConditions());
 
@@ -73,6 +81,12 @@ public class Controller {
 				+ widget.getCountryName() + ")");
 		
 		TemperatureManager temperatureManager = new TemperatureManager();
+		WindConversion windConversion = new WindDegreesToWindDirection();
+		WindManager windManager = new WindManager();
+		int windDirectionIndex = windConversion.convert(Integer.parseInt(widget.getWindDegree()));
+		
+		String windDirection = windDirections[windDirectionIndex];
+		
 		PressureManager pressureManager = new PressureManager();
 		
 		views.setTextViewText(R.id.temperature, temperatureManager.getTemperature(Float.parseFloat(widget.getTemperature()), context));
@@ -81,6 +95,7 @@ public class Controller {
 		views.setTextViewText(R.id.pressure, "P" + " " + pressureManager.getPressure(Double.parseDouble(widget.getPressure()), context));
 		views.setTextViewText(R.id.max_temperature, temperatureManager.getTemperature(Float.parseFloat(widget.getHighTemperature()), context));
 		views.setTextViewText(R.id.min_temperature, temperatureManager.getTemperature(Float.parseFloat(widget.getLowTemperature()), context));
+		views.setTextViewText(R.id.wind,res.getString(R.string.wind) + " " + windManager.getWindVelocity(Integer.parseInt(widget.getWindVelocity()), context) + " "+ windDirection);
 		
 		//Make a Clickleable Widget
 		Intent intent = new Intent(context, WidgetPreferences.class);
@@ -111,16 +126,15 @@ public class Controller {
 						widget.getWoeid(), widget.getScale());
 
 				// Update Widget Data
-
-				
 				widget.setHighTemperature(weather.get(0).getHighTemperature());
 				widget.setLowTemperature(weather.get(0).getLowTemperature());
 				widget.setPressure(weather.getPressure());
 				widget.setHumidity(weather.getHumidity());
 				widget.setSkyConditions(weather.getSkyConditions());
 				widget.setTemperature(weather.getTemperature());
-				widget.setUpdateDateTime(DateFormat.getDateTimeInstance()
-						.format(new Date()));
+				widget.setUpdateDateTime(DateFormat.getDateTimeInstance().format(new Date()));
+				widget.setWindDegree(weather.getWindDegree());
+				widget.setWindVelocity(weather.getWindVelocity());
 				
 				// Update DataBase Information
 				DataBaseMapper.getInstance().updateWidget(widget, context);

@@ -14,9 +14,7 @@ public class TemperatureManager {
 		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
 		
 		int scale = Integer.parseInt(settings.getString("setting_temperature", "0"));
-		
-		Log.d("T",Integer.toString(scale));
-		
+			
 		switch (scale) {
 			case 0:
 				this.temperatureConversion = new FahrenheitToFahrenheit();

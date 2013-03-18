@@ -21,7 +21,9 @@ public class DataBaseMapper {
 									  WidgetContract.KEY_WIDGETS_LAST_TEMPERATURE,
 									  WidgetContract.KEY_WIDGETS_SCALE_DATA,
 									  WidgetContract.KEY_WIDGETS_WOEID,
-									  WidgetContract.KEY_WIDGETS_LAST_UPDATE_DATETIME};
+									  WidgetContract.KEY_WIDGETS_LAST_UPDATE_DATETIME,
+									  WidgetContract.KEY_WIDGETS_WIND_DEGREE,
+									  WidgetContract.KEY_WIDGETS_WIND_VELOCITY};
 	
 	//Make This Class Singleton
 	public static DataBaseMapper instance;
@@ -65,6 +67,8 @@ public class DataBaseMapper {
 		widget.setWoeid(cursorWidgets.getString(cursorWidgets.getColumnIndex(WidgetContract.KEY_WIDGETS_WOEID)));
 		widget.setSkyConditions(cursorWidgets.getString(cursorWidgets.getColumnIndex(WidgetContract.KEY_WIDGETS_LAST_SKY_CONDITIONS)));
 		widget.setUpdateDateTime(cursorWidgets.getString(cursorWidgets.getColumnIndex(WidgetContract.KEY_WIDGETS_LAST_UPDATE_DATETIME)));
+		widget.setWindDegree(cursorWidgets.getString(cursorWidgets.getColumnIndex(WidgetContract.KEY_WIDGETS_WIND_DEGREE)));
+		widget.setWindVelocity(cursorWidgets.getString(cursorWidgets.getColumnIndex(WidgetContract.KEY_WIDGETS_WIND_VELOCITY)));
 		
 		cursorWidgets.close();
 		// return Widget Init Data
@@ -105,11 +109,13 @@ public class DataBaseMapper {
 		
 		values.put(WidgetContract.KEY_WIDGETS_LAST_UPDATE_DATETIME, widget.getUpdateDateTime());
 		
-	
+		values.put(WidgetContract.KEY_WIDGETS_WIND_DEGREE, widget.getWindDegree());
+		
+		values.put(WidgetContract.KEY_WIDGETS_WIND_VELOCITY, widget.getWindVelocity());
+		
 		// Inserting Row
 		db.insert(WidgetContract.TABLE_WIDGETS, null, values);
-		
-
+	
 
 	}
 	
@@ -136,6 +142,10 @@ public class DataBaseMapper {
 		values.put(WidgetContract.KEY_WIDGETS_LAST_SKY_CONDITIONS,widget.getSkyConditions()); 
 		
 		values.put(WidgetContract.KEY_WIDGETS_LAST_UPDATE_DATETIME, widget.getUpdateDateTime());
+		
+		values.put(WidgetContract.KEY_WIDGETS_WIND_DEGREE, widget.getWindDegree());
+		
+		values.put(WidgetContract.KEY_WIDGETS_WIND_VELOCITY, widget.getWindVelocity());
 		
 		//Actualizamos el registro en la base de datos
 		db.update(WidgetContract.TABLE_WIDGETS, values,WidgetContract.KEY_WIDGETS_ID + " = ?" , new String[] { widget.getWidgetID() });

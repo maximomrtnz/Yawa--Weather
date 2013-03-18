@@ -14,6 +14,8 @@ public class Widget {
 	private String scale;
 	private String skyConditions;
 	private String updateDateTime;
+	private String windDegree;
+	private String windVelocity;
 	
 	
 	
@@ -88,6 +90,18 @@ public class Widget {
 	}
 	public void setUpdateDateTime(String updateDateTime) {
 		this.updateDateTime = updateDateTime;
+	}
+	public String getWindDegree() {
+		return windDegree;
+	}
+	public void setWindDegree(String windDegree) {
+		this.windDegree = windDegree;
+	}
+	public String getWindVelocity() {
+		return windVelocity;
+	}
+	public void setWindVelocity(String windVelocity) {
+		this.windVelocity = windVelocity;
 	}
 	
 	
