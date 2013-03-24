@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Yawa! Weather</string>
+    <string name="input_country_name">País</string>
+    <string name="input_city_name">Ciudad</string>
+    <string name="ok_new_widget">OK</string>
+    <string name="cancel_new_widget">Cancelar</string> 
+    <string name="input_location">Ingrese una Localidad</string> 
+    <string name="preference_scale_temperature">Escala de Temperatura</string>
+    <string name="preference_scale_pressure">Escala de presión</string>
+    <string name="preference_scale_velocity">Escala de Velocidad</string>
+    <string name="yawa_preferences">Configuraciones</string>
+    <string name="yawa_dialog_network_connection_off_title">Acceso a Red Denegado</string>
+    <string name="yawa_dialog_network_connection_off_message">Yawa! Weather necesita acceso a la red para obtener datos sobre el clima.</string>
+    <string name="yawa_dialog_loading_data">Cargando Datos... Por favor espere...</string>
+    <string name="yawa_dialog_locations">Seleccione una localidad</string>
+    <string name="yawa_location_not_results">No se encontraron resultados. Por favor intente de nuevo!</string>
+    <string name="yawa_preferences_scales">Escalas</string>
+    <string name="preference_scale_temperature_summary">Seleccione una escala de temperatura</string>
+    <string name="preference_scale_pressure_summary">Seleccione una escala de presión</string>
+    <string name="preference_scale_velocity_summary">Seleccione una escala de velocidad</string>
+    <string name="wind">Viento</string>
+    <string name="high_temperature">Max.</string>
+    <string name="low_temperature">Min</string>
+    
+</resources>

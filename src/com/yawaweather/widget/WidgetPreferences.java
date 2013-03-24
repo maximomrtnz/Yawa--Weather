@@ -3,6 +3,7 @@ package com.yawaweather.widget;
 
 import com.yawaweather.controller.Controller;
 import com.yawaweather.main.R;
+import com.yawaweather.utilities.NotificationsManager;
 
 import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
@@ -39,7 +40,12 @@ public class WidgetPreferences extends PreferenceActivity {
 	protected void onStop() {
 		// TODO Auto-generated method stub
 		super.onStop();
-		Controller.getInstance().updateAllWidget(getApplicationContext());
+		try {
+			Controller.getInstance().updateAllWidget(getApplicationContext());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			NotificationsManager.getInstance().toastNotification(getApplicationContext(), R.string.error);
+		}
 	}
 	
 	@Override

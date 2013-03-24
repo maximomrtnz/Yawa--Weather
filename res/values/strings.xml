@@ -27,5 +27,8 @@
     <string name="wind">Wind</string>
     <string name="high_temperature">High</string>
     <string name="low_temperature">Low</string>
+    <string name="error">An error ocurred</string>
+    <string name="error_getting_weather_data">Error while weather data was getting</string>
+    <string name="error_title">Error</string>
     
 </resources>

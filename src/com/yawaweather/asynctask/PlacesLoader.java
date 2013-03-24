@@ -1,9 +1,11 @@
 package com.yawaweather.asynctask;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 
 
+import org.apache.http.client.ClientProtocolException;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -107,6 +109,12 @@ public class PlacesLoader extends AsyncTask<Object, Void, ArrayList<Place>> {
 			}
 			
 		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			Log.d("Error", e.toString());
+		} catch (ClientProtocolException e) {
+			// TODO Auto-generated catch block
+			Log.d("Error", e.toString());
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			Log.d("Error", e.toString());
 		}

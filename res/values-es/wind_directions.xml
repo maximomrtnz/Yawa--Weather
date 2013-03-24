@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="yawa_weather_wind_directions">
+        
+        <item>Norte</item>
+        <item>Nornoreste</item>
+        <item>Noreste</item>
+        <item>Estenoreste</item>
+        <item>Este</item>
+        <item>Estesureste</item>
+        <item>Sureste</item>
+        <item>Sursureste </item>
+        <item>Sur</item>
+        <item>Sursuroeste</item>
+        <item>Suroeste</item>
+        <item>Oestesuroeste</item>
+        <item>Oeste</item>
+        <item>Oestenoro</item>
+        <item>Noroeste </item>
+        <item>Nornoroeste</item>
+   
+     </string-array>
+
+</resources>

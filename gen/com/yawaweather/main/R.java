@@ -50,14 +50,20 @@ containing a value of this type.
     public static final class drawable {
         public static final int background=0x7f020000;
         public static final int downarrow=0x7f020001;
-        public static final int ic_cloudy=0x7f020002;
-        public static final int ic_drizzle=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int ic_mostly_cloudy=0x7f020005;
-        public static final int ic_snow=0x7f020006;
-        public static final int ic_sunny=0x7f020007;
-        public static final int ic_tunderstorm=0x7f020008;
-        public static final int uparrow=0x7f020009;
+        public static final int ic__showers_scattered=0x7f020002;
+        public static final int ic_few_clouds=0x7f020003;
+        public static final int ic_few_clouds_night=0x7f020004;
+        public static final int ic_fog=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int ic_night=0x7f020007;
+        public static final int ic_overcast=0x7f020008;
+        public static final int ic_severe_alert=0x7f020009;
+        public static final int ic_showers=0x7f02000a;
+        public static final int ic_showers_scattered=0x7f02000b;
+        public static final int ic_snow=0x7f02000c;
+        public static final int ic_storm=0x7f02000d;
+        public static final int ic_sunny=0x7f02000e;
+        public static final int uparrow=0x7f02000f;
     }
     public static final class id {
         public static final int Corners=0x7f0b0019;
@@ -106,6 +112,9 @@ containing a value of this type.
         public static final int cancel_new_widget=0x7f080006;
         public static final int dummy_button=0x7f080002;
         public static final int dummy_content=0x7f080001;
+        public static final int error=0x7f08001a;
+        public static final int error_getting_weather_data=0x7f08001b;
+        public static final int error_title=0x7f08001c;
         public static final int high_temperature=0x7f080018;
         public static final int input_city_name=0x7f080004;
         public static final int input_country_name=0x7f080003;

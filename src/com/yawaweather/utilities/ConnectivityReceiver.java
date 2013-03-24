@@ -11,7 +11,7 @@ import android.content.Intent;
 public class ConnectivityReceiver extends BroadcastReceiver{
 
 	@Override
-	public void onReceive(Context context, Intent intent) {
+	public void onReceive(Context context, Intent intent){
 		// TODO Auto-generated method stub
 
 		ComponentName thiswidget = new ComponentName(context, com.yawaweather.widget.WeatherWidgetProvider.class);

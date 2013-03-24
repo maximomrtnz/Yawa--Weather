@@ -33,10 +33,12 @@ import com.yawaweather.dialogs.LocationListDialog.LocationListDialogListener;
 import com.yawaweather.dialogs.LocationListView;
 import com.yawaweather.dialogs.NetworkConnectionOffDialog;
 import com.yawaweather.dialogs.NetworkConnectionOffDialog.NetworkConnectionOffListener;
+import com.yawaweather.main.R;
 import com.yawaweather.model.Place;
 import com.yawaweather.model.Weather;
 import com.yawaweather.model.Widget;
 import com.yawaweather.utilities.CheckList;
+import com.yawaweather.utilities.NotificationsManager;
 import com.yawaweather.utilities.PlacesSetter;
 import com.yawaweather.utilities.WeatherSetter;
 
@@ -208,7 +210,13 @@ public class WidgetConfigurationActivity extends FragmentActivity implements Pla
 		this.widget.setWindVelocity(weather.getWindVelocity());
 		
 		
-		Controller.getInstance().addNewWidget(getApplicationContext(), widget);
+		try {
+			Controller.getInstance().addNewWidget(getApplicationContext(), widget);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			NotificationsManager.getInstance().toastNotification(getApplicationContext(), R.string.error);
+			finish();
+		}
 		
 		
 		Intent resultValue = new Intent();

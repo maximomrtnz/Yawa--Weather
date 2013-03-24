@@ -3,7 +3,9 @@ package com.yawaweather.widget;
 
 
 import com.yawaweather.controller.Controller;
+import com.yawaweather.main.R;
 import com.yawaweather.model.Widget;
+import com.yawaweather.utilities.NotificationsManager;
 
 import android.app.IntentService;
 
@@ -36,7 +38,8 @@ public class UpdateService extends IntentService{
 			
 		}catch (Exception e) {
 				// TODO: handle exception
-				Log.d("Error while weather data was getting", e.getMessage());
+				NotificationsManager.getInstance().statusBarNotification(getApplicationContext(), R.string.error_title, R.string.error_getting_weather_data);
+				
 		}		
 				
 	}

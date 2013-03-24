@@ -37,7 +37,7 @@ public class DataBaseMapper {
 		return instance;
 	}
 	
-	public Widget getWidgetInitData(String widgetId, Context context){
+	public Widget getWidgetInitData(String widgetId, Context context) throws Exception{
 	 	
 		
 		
@@ -76,7 +76,7 @@ public class DataBaseMapper {
 	}
 	
 	
-	public void addWidget(Widget widget, Context context){
+	public void addWidget(Widget widget, Context context) throws Exception{
 		
 	
 				
@@ -120,7 +120,7 @@ public class DataBaseMapper {
 	}
 	
 	
-	public void updateWidget(Widget widget,Context context){
+	public void updateWidget(Widget widget,Context context) throws Exception{
 						
 		//Get Yawa DataBase
 		SQLiteDatabase db = DataBaseHandler.getInstance(context).getWritableDatabase();
@@ -156,7 +156,7 @@ public class DataBaseMapper {
 	
 	
 	// Deleting single Widget
-	public void deleteWidget(Widget widget, Context context) {
+	public void deleteWidget(Widget widget, Context context) throws Exception{
 							
 		//Get Yawa DataBase
 		SQLiteDatabase db = DataBaseHandler.getInstance(context).getWritableDatabase();

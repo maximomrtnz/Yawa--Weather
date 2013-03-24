@@ -15,6 +15,7 @@ import com.yawaweather.model.WindDegreesToWindDirection;
 import com.yawaweather.model.WindManager;
 import com.yawaweather.rss.GetXMLFromWebServices;
 import com.yawaweather.utilities.CheckList;
+import com.yawaweather.utilities.WeatherImageManager;
 import com.yawaweather.widget.UpdateService;
 import com.yawaweather.widget.WeatherWidgetProvider;
 import com.yawaweather.widget.WidgetPreferences;
@@ -43,13 +44,13 @@ public class Controller {
 		return instance;
 	}
 
-	public void addNewWidget(Context context, Widget widget) {
+	public void addNewWidget(Context context, Widget widget) throws Exception {
 		DataBaseMapper dataBaseMapper = DataBaseMapper.getInstance();
 		dataBaseMapper.addWidget(widget, context);
 		this.updateWidgetView(context, widget);
 	}
 
-	private void updateWidgetView(Context context, Widget widget) {
+	private void updateWidgetView(Context context, Widget widget) throws Exception{
 
 		AppWidgetManager appWidgetManager = AppWidgetManager
 				.getInstance(context);
@@ -96,6 +97,8 @@ public class Controller {
 		views.setTextViewText(R.id.max_temperature, temperatureManager.getTemperature(Float.parseFloat(widget.getHighTemperature()), context));
 		views.setTextViewText(R.id.min_temperature, temperatureManager.getTemperature(Float.parseFloat(widget.getLowTemperature()), context));
 		views.setTextViewText(R.id.wind,res.getString(R.string.wind) + " " + windManager.getWindVelocity(Integer.parseInt(widget.getWindVelocity()), context) + " "+ windDirection);
+		views.setImageViewResource(R.id.sky_condition_image, WeatherImageManager.getInstance().getImageId(idSkyConditions));
+		
 		
 		//Make a Clickleable Widget
 		Intent intent = new Intent(context, WidgetPreferences.class);
@@ -106,7 +109,7 @@ public class Controller {
 				Integer.parseInt(widget.getWidgetID()), views);
 	}
 
-	public void updateWidgetData(Context context, Widget widget) {
+	public void updateWidgetData(Context context, Widget widget) throws Exception {
 
 		widget = DataBaseMapper.getInstance().getWidgetInitData(
 				widget.getWidgetID(), context);
@@ -145,7 +148,7 @@ public class Controller {
 		}
 	}
 	
-	public void updateAllWidget(Context context){
+	public void updateAllWidget(Context context) throws Exception{
 		
 		AppWidgetManager appWidgetManager = AppWidgetManager
 				.getInstance(context);

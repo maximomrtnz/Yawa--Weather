@@ -1,8 +1,5 @@
 package com.yawaweather.dialogs;
 
-import com.yawaweather.buttonlisteners.NegativeButtonInputLocationDialogListener;
-import com.yawaweather.buttonlisteners.PositiveButtonInputLocationDialogListener;
-import com.yawaweather.dialogs.NetworkConnectionOffDialog.NetworkConnectionOffListener;
 import com.yawaweather.main.R;
 
 import android.app.Activity;
@@ -15,7 +12,7 @@ import android.support.v4.app.DialogFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.EditText;
+
 
 
 public class LoadingDataDialog extends DialogFragment{

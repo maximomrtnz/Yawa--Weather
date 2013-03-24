@@ -27,7 +27,13 @@ public class WeatherWidgetProvider extends AppWidgetProvider{
 		for(int widgetId : appWidgetIds){
 			Widget widget = new Widget();
 			widget.setWidgetID(Integer.toString(widgetId));
-			dataBaseMapper.deleteWidget(widget, context);
+			try {
+				dataBaseMapper.deleteWidget(widget, context);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+
+				e.printStackTrace();
+			}
 		}
 		super.onDeleted(context, appWidgetIds);
 	}
