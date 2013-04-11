@@ -44,6 +44,7 @@ containing a value of this type.
     public static final class dimen {
         public static final int big_text_widget=0x7f060001;
         public static final int city_text_widget=0x7f060002;
+        public static final int other_widget_data_text_widget=0x7f060004;
         public static final int sky_conditions_text_widget=0x7f060003;
         public static final int widget_margin=0x7f060000;
     }
@@ -159,9 +160,20 @@ containing a value of this type.
         res/values-v11/styles.xml on API 14+ devices.
     
  API 14 theme customizations can go here. 
+
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    
+
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        
          */
         public static final int AppBaseTheme=0x7f090000;
         /**  Application theme. 
+ All customizations that are NOT specific to a particular API-level can go here. 
+ Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f090001;

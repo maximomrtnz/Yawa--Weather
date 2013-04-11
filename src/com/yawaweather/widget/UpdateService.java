@@ -38,7 +38,7 @@ public class UpdateService extends IntentService{
 			
 		}catch (Exception e) {
 				// TODO: handle exception
-				NotificationsManager.getInstance().statusBarNotification(getApplicationContext(), R.string.error_title, R.string.error_getting_weather_data);
+				//NotificationsManager.getInstance().statusBarNotification(getApplicationContext(), R.string.error_title, R.string.error_getting_weather_data);
 				
 		}		
 				

@@ -29,8 +29,7 @@
             <ImageView
                 android:id="@+id/sky_condition_image"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_snow" />
+                android:layout_height="wrap_content"/>
         </LinearLayout>
 
         <LinearLayout
